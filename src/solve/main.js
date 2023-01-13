@@ -59,18 +59,14 @@ function syncUI() {
       ? 0
       : 2;
 
-    const shadow = helpButtonHolder.attachShadow({
-      mode: 'closed',
-      delegatesFocus: true
-    });
-
+    
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute(
       'href',
       browser.runtime.getURL('/src/solve/solver-button.css')
     );
-    shadow.appendChild(link);
+    helperButtonHolder.appendChild(link);
 
     solverButton = document.createElement('button');
     solverButton.setAttribute('tabindex', '0');
